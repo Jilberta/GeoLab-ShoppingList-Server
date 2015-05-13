@@ -1,0 +1,20 @@
+<configuration debug="false">
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/shopping-list.log</file>
+
+        <encoder>
+            <Pattern>%d %-5p [%c] [%thread] %m%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="ge.edu.geolab">
+        <level value="DEBUG"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="com.zaxxer.hikari.pool.PoolUtilities">
+        <level value="INFO"/>
+    </logger>
+
+</configuration>

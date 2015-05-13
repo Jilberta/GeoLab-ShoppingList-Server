@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="PU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.connection.provider_class"
+                      value="com.zaxxer.hikari.hibernate.HikariConnectionProvider"/>
+            <property name="hibernate.hikari.minimumIdle" value="20"/>
+            <property name="hibernate.hikari.maximumPoolSize" value="100"/>
+            <property name="hibernate.hikari.idleTimeout" value="30000"/>
+            <property name="hibernate.hikari.dataSourceClassName" value="org.postgresql.ds.PGSimpleDataSource"/>
+            <property name="hibernate.hikari.connectionTestQuery" value="SELECT 1"/>
+
+            <property name="hibernate.hikari.dataSource.serverName" value="${serverName}"/>
+            <property name="hibernate.hikari.dataSource.portNumber" value="5432"/>
+            <property name="hibernate.hikari.dataSource.databaseName" value="${databaseName}"/>
+
+            <property name="hibernate.hikari.dataSource.user" value="${user}"/>
+            <property name="hibernate.hikari.dataSource.password" value="${password}"/>
+
+        </properties>
+    </persistence-unit>
+</persistence>
